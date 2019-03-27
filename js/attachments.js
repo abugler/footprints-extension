@@ -1,10 +1,13 @@
+//Finds the table of attachments on the webpage
 let attachments = document.querySelectorAll("table#attachments_summary a");
 
 attachments.forEach(function (e) {
+    //if it is not a download button, return and end the function
     if (e.textContent !== "Download") {
         return;
     }
 
+    //get the onclick action (which is downloading a file)
     const oldEvent = e.getAttribute("onclick");
 
     // Get the arguments to the function call in the existing onclick attr
@@ -20,6 +23,7 @@ attachments.forEach(function (e) {
         args[i] = dirtyArgs[i].replace(/'/g, "")
     }
 
+    // at & chars, split the 
     let query_param_tuples = args[1].split('&');
     const allowed_query_keys = ["USER","PROJECTID","MRP","EXT_LINK","CUSTM","SOLUTIONS_FROM_OTHER_PROJ","ORIGINAL_PROJECT","MR","ATTACHMENT_NAME","SESS_ID"];
     let final_qp = [];
