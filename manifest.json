@@ -22,15 +22,6 @@
   "content_scripts": [
     {
       "matches": [
-        "https://itsm-fp.northwestern.edu/MRcgi/MRABregsearch_page*"
-      ],
-      "js": [
-        "js/keep_phone_number.js"
-      ],
-      "run_at": "document_start"
-    },
-    {
-      "matches": [
         "https://itsm.northwestern.edu/MRcgi/MRTicketPage.pl*",
         "https://itsm-fp.northwestern.edu/MRcgi/MRTicketPage.pl*"
       ],
@@ -94,6 +85,15 @@
         "js/popup.js"
       ],
       "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://itsm-fp.northwestern.edu/MRcgi/MRhomepage.pl*"
+      ],
+      "js": [
+        "js/locked_issues.js"
+      ],
+      "run_at": "document_idle"
     }
   ],
   "permissions": [

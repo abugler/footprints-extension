@@ -1,3 +1,4 @@
+
 function updateValues() {
   console.log("SWITCHING SEARCH TYPE");
   
